@@ -16,8 +16,8 @@
 .triangle {
     position: absolute;
     left: 50%;
-    top: 200px;
-    margin-left: -5px;
+    top: 145px;
+    margin-left: -10px;
     border: 10px solid black;
     width: 0px;
     height: 0px;
@@ -33,4 +33,37 @@
     left: -10px;
     border-radius: 10px 10px 0 0;
     background: black;
+}
+
+.eye {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #000;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    background: #2e2e2e;
+    margin-left: -32px;
+    border-radius: 50%;
+}
+
+.eye::before {
+    content: '';
+    border: 3px solid black;
+    width: 25px;
+    display: block;
+    height: 25px;
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+    left: 8px;
+    top: 2px;
+}
+
+.eye.left {
+    transform: translateX(-100px);
+}
+
+.eye.right {
+    transform: translateX(100px);
 }
