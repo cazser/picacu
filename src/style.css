@@ -28,6 +28,26 @@
     border-color: black transparent transparent transparent;
 }
 
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(5deg);
+    }
+    66% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.nose:hover {
+    transform-origin: 50% 100%;
+    animation: wave 300ms infinite;
+}
+
 .circle {
     position: absolute;
     width: 20px;
@@ -91,7 +111,7 @@
 }
 
 .up>.lip.left {
-    border: 5px solid black;
+    border: 3px solid black;
     height: 30px;
     width: 100px;
     border-radius: 0 0 0 50px;
@@ -114,7 +134,7 @@
 }
 
 .up>.lip.right {
-    border: 5px solid black;
+    border: 3px solid black;
     height: 30px;
     width: 100px;
     border-radius: 0 0 50px 0;
@@ -166,4 +186,24 @@
     left: 50%;
     margin-left: -100px;
     border-radius: 100px;
+}
+
+.face {
+    position: absolute;
+    left: 50%;
+    border: 3px solid black;
+    width: 88px;
+    height: 88px;
+    top: 200px;
+    background: #ff0000;
+    border-radius: 50%;
+    margin-left: -44px;
+}
+
+.face.left {
+    transform: translateX(-180px);
+}
+
+.face.right {
+    transform: translateX(180px);
 }
