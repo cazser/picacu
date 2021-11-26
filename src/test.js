@@ -1,13 +1,13 @@
 const cssCode =
     `
-* {
+.skin * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-*::after,
-*::before {
+.skin *::after,
+.skin *::before {
     box-sizing: boder-box;
 }
 
@@ -209,17 +209,44 @@ const cssCode =
 .face.right {
     transform: translateX(180px);
 }
+
+
+
+
 `
+
+
+
 let demo = document.querySelector("#demo")
 let style = document.querySelector("#demo2")
 
 let n = 0;
+let diff = 1;
 let intervalId = setInterval(() => {
-    if (n > cssCode.length) {
-        window.clearInterval(intervalId);
-    } else {
-        demo.innerHTML = cssCode.slice(0, n);
-        style.textContent = cssCode.slice(0, n);
-        n++;
-    }
+
+    demo.innerHTML = cssCode.slice(0, n);
+    style.textContent = cssCode.slice(0, n);
+    n += diff;
+
 }, 0)
+
+let pause = document.querySelector("#buttons>#pause")
+let play = document.querySelector("#buttons>#play")
+let speedUp = document.querySelector("#buttons>#speedUp")
+let slowdown = document.querySelector("#buttons>#slowdown")
+
+pause.addEventListener('click', () => {
+    diff = 0;
+})
+
+play.addEventListener('click', () => {
+    diff = 1;
+})
+
+speedUp.addEventListener("click", () => {
+    diff++;
+})
+
+slowdown.addEventListener("click", () => {
+    diff--;
+})
